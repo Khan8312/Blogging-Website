@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Build Artifacts on Github pages
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: actions/deploy-pages@v4
         with:
           artifact_name: "develop-artifact"
-          token:  ${{ secrets.GITHUB_TOKEN }}
+          token: ${{github.token}}

@@ -12,7 +12,7 @@ jobs:
       - name: Build Website
         run: npx parcel build "./src/homePage.html" --dist-dir "./dev" --public-url "./"
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./dev"
           name: "develop-artifact"
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Build Artifacts on Github pages
-        uses: actions/deploy-pages@v4
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           artifact_name: "develop-artifact"
           token: ${{github.token}}

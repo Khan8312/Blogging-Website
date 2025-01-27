@@ -4,7 +4,7 @@ on:
     branches:
       - develop
 jobs:
-  Build-job:
+  deploy-build-job:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
@@ -17,7 +17,7 @@ jobs:
           path: "./dev"
           name: "develop-artifact"
   deploy-job:
-    needs: Build-job
+    needs: deploy-build-job
     permissions:
       pages: write
       id-token: write
